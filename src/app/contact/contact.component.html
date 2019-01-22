@@ -29,7 +29,13 @@
     </label>
 
 
-
+    <label>
+      Phone:
+      <input type="text" formControlName="phone">
+      <div *ngIf="submitted && messageForm.controls.phone.errors" class="error">
+        <div *ngIf="messageForm.controls.phone.errors.required">Phone is required</div>
+      </div> 
+    </label>
     
     <input type="submit" value="Send message" class="cta">
   
@@ -44,4 +50,7 @@
 
     <strong>Message:</strong> 
     <span>{{ messageForm.controls.message.value }}</span>
+
+    <strong>Phone</strong>
+    <span>{{ messageForm.controls.phone.value}}</span>
   </div>
